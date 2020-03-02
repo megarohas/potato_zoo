@@ -26,3 +26,4 @@ const users_schema = new Schema({
 });
 // exports.createUsersTable = mongoose.model("users", userSchema);
 // exports.users = mongoose.model("users", userSchema);
+exports.users_schema = users_schema;
