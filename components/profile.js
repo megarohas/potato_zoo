@@ -19,10 +19,6 @@ const Profile = ({ user }) => {
         width: "calc(100% - 40px)"
       }}
     >
-      <div style={{ display: "flex" }}>
-        <h1>{`Hello, ${user.name} , this is  `}</h1> <h1>{project_link}</h1>
-        <h1>{`project !!!`}</h1>
-      </div>
       <h3
         style={{ fontWeight: "400" }}
       >{`Name of the current user: ${user.name}`}</h3>
