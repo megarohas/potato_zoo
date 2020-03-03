@@ -25,7 +25,7 @@ class PetConstructor extends React.Component {
       bio: undefined,
       photo: undefined,
       name: undefined,
-      type: undefined
+      type: ""
       // token: cookies.get("token") || null,
       // email: "",
       // password: "",
@@ -53,7 +53,6 @@ class PetConstructor extends React.Component {
   // };
 
   render() {
-    const imagePicked = image => console.log(image);
     return (
       <div
         style={{
@@ -99,7 +98,18 @@ class PetConstructor extends React.Component {
               style={{ backgroundColor: "green" }}
               width={201}
               height={201}
-              imagePicked={imagePicked}
+              imagePicked={image => {
+                console.log("image", image);
+                console.log("image.image", image.image);
+                let reader = new FileReader();
+                reader.onload = () => {
+                  let dataURL = reader.result;
+                  this.setState({ photo: dataURL });
+                  // console.log("dataURL", dataURL);
+                };
+
+                reader.readAsDataURL(image.file);
+              }}
               showButton
               imageDefault={"/no-avatar.png"}
             />
@@ -111,7 +121,10 @@ class PetConstructor extends React.Component {
                 labelId="demo-simple-select-filled-label"
                 id="demo-simple-select-filled"
                 // value={}
-                // onChange={}
+                onChange={e => {
+                  // console.log(e.target.value);
+                  this.setState({ type: e.target.value });
+                }}
               >
                 <MenuItem value="">
                   <em>None</em>
@@ -140,7 +153,7 @@ class PetConstructor extends React.Component {
               label="Name"
               // value={}
               onChange={e => {
-                // this.setState({ bio: e.target.value });
+                this.setState({ name: e.target.value });
               }}
               variant="filled"
             />
@@ -155,7 +168,7 @@ class PetConstructor extends React.Component {
               variant="filled"
               // variant="outlined"
               onChange={e => {
-                // this.setState({ bio: e.target.value });
+                this.setState({ bio: e.target.value });
               }}
             />
           </div>
@@ -171,7 +184,23 @@ class PetConstructor extends React.Component {
           <Button
             variant="contained"
             color="primary"
+            disabled={
+              !(
+                this.state.name &&
+                this.state.bio &&
+                this.state.type &&
+                this.state.photo
+              )
+            }
+            // disabled={false}
             onClick={() => {
+              let new_pet = {
+                name: this.state.name,
+                bio: this.state.bio,
+                type: this.state.type,
+                photo: this.state.photo
+              };
+              console.log("new_pet", new_pet);
               // cookies.remove("token");
               // Router.push("/");
             }}
