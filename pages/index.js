@@ -38,11 +38,11 @@ class Home extends React.Component {
             left: "0px",
             width: "100%",
             height: "100%",
-            backgroundImage: "url(/bg.jpg)"
+            backgroundImage: "url(/white-flecks.png)"
           }}
         >
           <Head>
-            <title>Home</title>
+            <title>Potato ZOO</title>
             <link rel="icon" href="/favicon.ico" />
             <link
               href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap"

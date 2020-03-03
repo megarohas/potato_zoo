@@ -9,6 +9,7 @@ import Snackbar from "@material-ui/core/Snackbar";
 import Router from "next/router";
 import { collectKeyboardActions } from "../helpers/front/funcs.js";
 import CustomSnackbar from "./custom_snackbar.js";
+import Potato from "./potato.js";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -88,6 +89,7 @@ class LoginForm extends React.Component {
             minWidth: "256px"
           }}
         >
+          <Potato />
           <div
             style={{
               fontFamily: "Roboto",

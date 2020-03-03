@@ -5,6 +5,7 @@ import { Cookies } from "react-cookie";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Snackbar from "@material-ui/core/Snackbar";
+import Potato from "./potato.js";
 const cookies = new Cookies();
 
 class SignupForm extends React.Component {
@@ -86,6 +87,7 @@ class SignupForm extends React.Component {
             boxShadow: "0 0 10px rgba(0,0,0,0.22)"
           }}
         >
+          <Potato />
           <div
             style={{
               fontFamily: "Roboto",
