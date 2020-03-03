@@ -196,7 +196,8 @@ class ImageDropZone extends Component {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                marginTop: "10px"
+                marginTop: "10px",
+                marginBottom: "12px"
               }}
             >
               <label
