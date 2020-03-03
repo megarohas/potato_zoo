@@ -22,7 +22,14 @@ const AnimatedBgImages = () => {
     ];
 
     return (
-      <div style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "space-evenly"
+        }}
+      >
         {[
           0,
           0,
