@@ -14,6 +14,7 @@ import { collectKeyboardActions } from "../helpers/front/funcs.js";
 import Profile from "../components/profile.js";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/core/styles";
+import AnimatedBg from "react-animated-bg";
 
 let theme = createMuiTheme({
   palette: {

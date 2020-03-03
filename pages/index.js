@@ -9,6 +9,7 @@ import LoginForm from "../components/login_form.js";
 import SignupForm from "../components/signup_form.js";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
+import AnimatedBgImages from "../components/animated_bg_images.js";
 
 let theme = createMuiTheme({
   palette: {
@@ -25,6 +26,7 @@ class Home extends React.Component {
       show_form_id: 0
     };
   }
+
   render() {
     return (
       <ThemeProvider theme={theme}>
@@ -41,6 +43,7 @@ class Home extends React.Component {
             backgroundImage: "url(/white-flecks.png)"
           }}
         >
+          <AnimatedBgImages />
           <Head>
             <title>Potato ZOO</title>
             <link rel="icon" href="/favicon.ico" />

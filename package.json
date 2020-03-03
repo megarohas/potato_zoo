@@ -25,6 +25,7 @@
     "query-string": "^6.9.0",
     "random-name": "^0.1.2",
     "react": "16.12.0",
+    "react-animated-bg": "^1.1.2",
     "react-cookie": "^4.0.1",
     "react-dom": "16.12.0",
     "typeface-roboto": "0.0.75"
