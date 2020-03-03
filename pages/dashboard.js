@@ -12,6 +12,7 @@ import TextField from "@material-ui/core/TextField";
 import Snackbar from "@material-ui/core/Snackbar";
 import { collectKeyboardActions } from "../helpers/front/funcs.js";
 import Profile from "../components/profile.js";
+import PetConstructor from "../components/pet_constructor.js";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/core/styles";
 import AnimatedBg from "react-animated-bg";
@@ -113,6 +114,7 @@ class Dashboard extends React.Component {
             </Button>
           </div>
           <Profile user={this.state.user} />
+          <PetConstructor />
         </div>
       </ThemeProvider>
     );
