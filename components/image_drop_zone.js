@@ -16,7 +16,7 @@ const style = {
   },
   leave: {
     border: "2px solid rgba(255, 238, 0, 1)",
-    backgroundColor: "rgb(230,230,230)",
+    backgroundColor: "rgb(255,255,255)",
     color: "rgb(128,128,128)",
     borderRadius: "4px"
   },
