@@ -37,6 +37,26 @@ class PetConstructor extends React.Component {
   //   <a>Secret page</a>
   // </Link>
 
+  createPet = async () => {
+    const response = await axios.post("/api/create_pet", {
+      name: this.state.name,
+      bio: this.state.bio,
+      type: this.state.type,
+      owner_id: this.props.user.id,
+      photo: this.state.photo
+    });
+
+    console.log("create_pet response", response);
+
+    // this.setState({
+    //   bio: undefined,
+    //   photo: undefined,
+    //   name: undefined,
+    //   type: ""
+    // });
+    location.reload();
+  };
+
   // onLoginClick = async () => {
   //   const response = await axios.post("/api/sign_up", {
   //     email: this.state.email,
@@ -120,7 +140,7 @@ class PetConstructor extends React.Component {
               <Select
                 labelId="demo-simple-select-filled-label"
                 id="demo-simple-select-filled"
-                // value={}
+                value={this.state.type}
                 onChange={e => {
                   // console.log(e.target.value);
                   this.setState({ type: e.target.value });
@@ -151,6 +171,7 @@ class PetConstructor extends React.Component {
               style={{ width: "100%", margin: "0px 20px 20px 0px" }}
               id="filled-multiline-flexible"
               label="Name"
+              value={this.state.name}
               // value={}
               onChange={e => {
                 this.setState({ name: e.target.value });
@@ -166,6 +187,7 @@ class PetConstructor extends React.Component {
               rows="11"
               defaultValue=""
               variant="filled"
+              value={this.state.bio}
               // variant="outlined"
               onChange={e => {
                 this.setState({ bio: e.target.value });
@@ -194,13 +216,8 @@ class PetConstructor extends React.Component {
             }
             // disabled={false}
             onClick={() => {
-              let new_pet = {
-                name: this.state.name,
-                bio: this.state.bio,
-                type: this.state.type,
-                photo: this.state.photo
-              };
-              console.log("new_pet", new_pet);
+              this.createPet();
+
               // cookies.remove("token");
               // Router.push("/");
             }}
@@ -212,5 +229,9 @@ class PetConstructor extends React.Component {
     );
   }
 }
+
+PetConstructor.defaultProps = {
+  user: { id: -1 }
+};
 
 export default PetConstructor;

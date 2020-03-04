@@ -114,7 +114,7 @@ class Dashboard extends React.Component {
             </Button>
           </div>
           <Profile user={this.state.user} />
-          <PetConstructor />
+          <PetConstructor user={this.state.user} />
         </div>
       </ThemeProvider>
     );
