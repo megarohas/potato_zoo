@@ -12,6 +12,7 @@ import TextField from "@material-ui/core/TextField";
 import Snackbar from "@material-ui/core/Snackbar";
 import { collectKeyboardActions } from "../helpers/front/funcs.js";
 import Profile from "../components/profile.js";
+import Pets from "../components/pets.js";
 import PetConstructor from "../components/pet_constructor.js";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/core/styles";
@@ -29,7 +30,7 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: { email: "", name: "Profile" },
+      user: { email: "", name: "Profile", id: "-1" },
       alert_is_open: false,
       phrase: "",
       trains: []
@@ -115,6 +116,7 @@ class Dashboard extends React.Component {
           </div>
           <Profile user={this.state.user} />
           <PetConstructor user={this.state.user} />
+          {this.state.user.id != "-1" && <Pets user={this.state.user} />}
         </div>
       </ThemeProvider>
     );
@@ -122,7 +124,7 @@ class Dashboard extends React.Component {
 }
 
 Dashboard.getInitialProps = async ctx => {
-  let response = { response: { data: { user: {} } } };
+  let response = { response: { data: { user: { id: "-1" } } } };
 
   await handleAuthSSR(ctx);
 
