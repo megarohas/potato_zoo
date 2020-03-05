@@ -16,7 +16,10 @@ const Pet = ({ pet }) => {
         borderRadius: "10px",
         margin: "20px 0px",
         width: "calc(100% - 40px)",
-        display: "flex"
+        display: "flex",
+        // alignItems: "center",
+        justifyContent: "center",
+        flexWrap: "wrap"
       }}
     >
       <div>
@@ -35,8 +38,9 @@ const Pet = ({ pet }) => {
           }}
         />
       </div>
-      <div>
+      <div style={{ minWidth: "220px", flexGrow: "1" }}>
         <div style={{ fontWeight: "400" }}>{`Name: ${pet.name}`}</div>
+        <div style={{ fontWeight: "400" }}>{`ID: ${pet.id}`}</div>
         <div style={{ fontWeight: "400" }}>{`Type: ${pet.type}`}</div>
         <div style={{ fontWeight: "400" }}>{`Biography: ${pet.bio}`}</div>
       </div>
