@@ -29,8 +29,7 @@ const Pet = ({ pet }) => {
             cursor: "pointer",
             height: "200px",
             width: "200px",
-            borderRadius: "5px",
-            marginRight: "20px"
+            borderRadius: "5px"
           }}
           onClick={() => {
             let audio = new Audio("/cat.mp3");
@@ -38,7 +37,14 @@ const Pet = ({ pet }) => {
           }}
         />
       </div>
-      <div style={{ minWidth: "220px", flexGrow: "1" }}>
+      <div
+        style={{
+          minWidth: "220px",
+          flexGrow: "1",
+          marginLeft: "20px",
+          marginTop: "20px"
+        }}
+      >
         <div style={{ fontWeight: "400" }}>{`Name: ${pet.name}`}</div>
         <div style={{ fontWeight: "400" }}>{`ID: ${pet.id}`}</div>
         <div style={{ fontWeight: "400" }}>{`Type: ${pet.type}`}</div>
