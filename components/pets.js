@@ -51,9 +51,36 @@ class Pets extends React.Component {
           width: "calc(100% - 40px)"
         }}
       >
-        {this.state.pets.map(pet => (
-          <Pet pet={pet} />
-        ))}
+        <div
+          style={{
+            fontWeight: "600",
+            marginBottom: "30px",
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "23px"
+          }}
+        >{`PETS`}</div>
+        {this.state.pets.length > 0 ? (
+          this.state.pets.map(pet => <Pet pet={pet} />)
+        ) : (
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center"
+            }}
+          >
+            <img
+              style={{
+                width: "100px",
+                height: "100px"
+              }}
+              src={`/spinner.svg`}
+            />
+          </div>
+        )}
       </div>
     );
   }

@@ -22,6 +22,7 @@ class PetConstructor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      spinner_state: false,
       bio: undefined,
       photo: undefined,
       name: undefined,
@@ -203,6 +204,15 @@ class PetConstructor extends React.Component {
             marginTop: "20px"
           }}
         >
+          {this.state.spinner_state && (
+            <img
+              style={{
+                width: "36px",
+                height: "36px"
+              }}
+              src={`/spinner.svg`}
+            />
+          )}
           <Button
             variant="contained"
             color="primary"
@@ -217,7 +227,7 @@ class PetConstructor extends React.Component {
             // disabled={false}
             onClick={() => {
               this.createPet();
-
+              this.setState({ spinner_state: true });
               // cookies.remove("token");
               // Router.push("/");
             }}
