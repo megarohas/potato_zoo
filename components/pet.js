@@ -63,7 +63,9 @@ const Pet = ({ pet }) => {
         <div style={{ fontWeight: "400" }}>{`Name: ${pet.name}`}</div>
         <div style={{ fontWeight: "400" }}>{`ID: ${pet.id}`}</div>
         <div style={{ fontWeight: "400" }}>{`Type: ${pet.type}`}</div>
-        <div style={{ fontWeight: "400" }}>{`Biography: ${pet.bio}`}</div>
+        <div
+          style={{ fontWeight: "400", maxWidth: "500px", textAlign: "justify" }}
+        >{`Biography: ${pet.bio}`}</div>
       </div>
     </div>
   );
