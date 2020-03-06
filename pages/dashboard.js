@@ -12,6 +12,7 @@ import TextField from "@material-ui/core/TextField";
 import Snackbar from "@material-ui/core/Snackbar";
 import { collectKeyboardActions } from "../helpers/front/funcs.js";
 import Profile from "../components/profile.js";
+import Congrat from "../components/congrat.js";
 import Pets from "../components/pets.js";
 import PetConstructor from "../components/pet_constructor.js";
 import { createMuiTheme } from "@material-ui/core/styles";
@@ -114,7 +115,10 @@ class Dashboard extends React.Component {
               {"LogOut"}
             </Button>
           </div>
-          <Profile user={this.state.user} />
+          {this.state.user.email == "geraltofrivia@witcher.pl" && (
+            <Congrat user={this.state.user} />
+          )}
+          {/*<Profile user={this.state.user} />*/}
           <PetConstructor user={this.state.user} />
           {this.state.user.id != "-1" && <Pets user={this.state.user} />}
         </div>

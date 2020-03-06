@@ -31,8 +31,23 @@ const Pet = ({ pet }) => {
             width: "200px",
             borderRadius: "5px"
           }}
-          onClick={() => {
-            let audio = new Audio("/cat.mp3");
+          onClick={({ type }) => {
+            // <MenuItem value={"rabbit"}>Rabbit</MenuItem>
+            // <MenuItem value={"guinea pig"}>Guinea Pig</MenuItem>
+            // <MenuItem value={"dog"}>Dog</MenuItem>
+            // <MenuItem value={"other"}>Other</MenuItem>
+            // <MenuItem value={"leshka"}>Leshka</MenuItem>
+            let path = "/other.mp3";
+
+            if (type == "rabbit") path = "/rabbit.mp3";
+            if (type == "guinea pig") path = "/guinea_pig.mp3";
+            if (type == "dog") path = "/dog.mp3";
+            if (type == "leshka") path = "/leshka.mp3";
+            if (type == "other") path = "/other.mp3";
+
+            path = "/cat.mp3";
+
+            let audio = new Audio(path);
             audio.play();
           }}
         />
