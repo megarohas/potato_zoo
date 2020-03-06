@@ -6,6 +6,7 @@ class Congrat extends React.Component {
   // const Congrat = ({ user }) => {
   constructor(props) {
     super(props);
+    this.audio = new Audio("/bd_song.mp3");
     this.state = {
       firework_state: true
     };
@@ -14,7 +15,9 @@ class Congrat extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ firework_state: false });
-    }, 2000);
+    }, 5000);
+
+    this.audio.play();
   }
 
   render() {

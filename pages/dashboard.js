@@ -115,7 +115,7 @@ class Dashboard extends React.Component {
               {"LogOut"}
             </Button>
           </div>
-          {this.state.user.email == "geraltofrivia@witcher.pl" && (
+          {this.state.user.email == "aleksandra.reisler@gmail.com" && (
             <Congrat user={this.state.user} />
           )}
           {/*<Profile user={this.state.user} />*/}
