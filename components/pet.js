@@ -45,7 +45,7 @@ const Pet = ({ pet }) => {
             if (type == "leshka") path = "/leshka.mp3";
             if (type == "other") path = "/other.mp3";
 
-            path = "/cat.mp3";
+            // path = "/cat.mp3";
 
             let audio = new Audio(path);
             audio.play();
