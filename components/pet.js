@@ -39,11 +39,11 @@ const Pet = ({ pet }) => {
             // <MenuItem value={"leshka"}>Leshka</MenuItem>
             let path = "/other.mp3";
 
-            if (type == "rabbit") path = "/rabbit.mp3";
-            if (type == "guinea pig") path = "/guinea_pig.mp3";
-            if (type == "dog") path = "/dog.mp3";
-            if (type == "leshka") path = "/leshka.mp3";
-            if (type == "other") path = "/other.mp3";
+            if (pet.type == "rabbit") path = "/rabbit.mp3";
+            if (pet.type == "guinea pig") path = "/guinea_pig.mp3";
+            if (pet.type == "dog") path = "/dog.mp3";
+            if (pet.type == "leshka") path = "/leshka.mp3";
+            if (pet.type == "other") path = "/other.mp3";
 
             // path = "/cat.mp3";
 
